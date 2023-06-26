@@ -1,0 +1,68 @@
+<resources>
+
+    <string name="app_name">DAVICIO</string>
+    <string name="splash">codificandoideas</string>
+    <string name="logodavicio">logoDavicio</string>
+
+
+    <!--TEXTOS DE INICIO-->
+    <string name="bajadainicio">Acabá con tus Dudas</string>
+    <string name="bajadainicio2">Potencia tus fantasias Nerd</string>
+    <string name="btninicioingresar">INICIAR SESION</string>
+    <string name="btninicioregistrarse">REGISTRATE</string>
+
+    <!--TEXTOS DE ADVERTENCIAS-->
+    <string name="advertenciatxt">¡DaVicio es un sitio web solo para nerds! El contenido disponible en DaVicio puede contener material que hiera la suceptibilidad de personas normales. DaVicio está estrictamente limitado a mayores de 18 años o a la mayoría de edad acorde a tu jurisdicción, considerando la edad que sea mayor de ambas y amantes del código en cualquiera de sus expresiones. Uno de nuestros principales objetivos es ayudar a los padres a restringir el acceso de los menores a DaVicio por lo que nos hemos asegurado de que DaVicio es, y seguirá siendo, totalmente compatible con el código RTA (Restricted to Adults). Esto significa que todo el acceso al sitio puede bloquearse mediante sencillas herramientas de control parental. Es importante que los padres y tutores responsables tomen las medidas necesarias para evitar que los menores accedan a contenidos inadecuados en línea, especialmente a los contenidos vinculados con código java explícito con múltiples iteraciones. Cualquier persona que tenga un menor en su casa o bajo su supervisión debería implementar protecciones básicas de control parental, incluyendo la configuración del hardware y dispositivos del ordenador, la instalación de software o servicios de filtrado de proveedores de servicios de Internet, para bloquear el acceso de sus menores a contenidos inadecuados.</string>
+    <string name="btnsoymayor">SOY SUFICIENTEMENTE NERD</string>
+    <string name="btnsoymenor">CANCELAR</string>
+    <string name="tituloadvertencia">ADVERTENCIAS DE USO</string>
+
+    <!--TEXTOS DE RESGISTRO-->
+    <string name="bajadaregistro">Animate, Registrate</string>
+    <string name="nombreregistro">Ingresá tu Nombre</string>
+    <string name="apellidoregistro">Ingresá tu Apellido</string>
+    <string name="mailregistro">Ingresá tu Mail</string>
+    <string name="contraseniaregistro">Ingresá tu Contraseña</string>
+    <string name="btnresgistroregistro">REGISTRARSE</string>
+    <string name="btncancelarregistro">CANCELAR</string>
+    <string name="camposincompletos">¡Completar todos los campos!</string>
+    <string name="yaregistrado">¡El mail ya esta registrado pillin!</string>
+
+    <!--TEXTOS DE LOGIN-->
+    <string name="logintitulo">Dale, Iniciá Sesión!</string>
+    <string name="btnlogininciar">INGRESA BEBE</string>
+    <string name="btnlogiregistrarse">TE DIJE QUE TE REGISTRARAS</string>
+    <string name="nombrelogin">Ingresá tu Mail</string>
+    <string name="contrasenialogin">Ingresá tu Contraseña</string>
+    <string name="mailincompleto">El mail es obligatorio. La Ai no es magica!</string>
+    <string name="mailnoencontrado">El mail no se encuentra Registrado</string>
+    <string name="contraseniaincompleta">La Contraseña es obligatoria cariño</string>
+    <string name="contrasenianoencontrada">Contraseña Incorrecta. No me hagas perder el tiempo!</string>
+    <string name="datosincorrectos">Mail o Contraseña Incorrecta. Hace memoria!.</string>
+    <string name="usuarionoencontrado">Che, no estas en la lista!</string>
+    <string name="ingresadatos">Algun dato tenes que poner. No soy adivino!.</string>
+    <!--TEXTOS DE CRUD-->
+    <string name="titulocrud">EDITAR,MODIFICAR,ELIMINAR USUARIOS</string>
+    <string name="titlecrudproduct">EDITAR,MODIFICAR,ELIMINAR PRODCUTOS</string>
+    <string name="btnadduser">AGREGAR USUARIOS</string>
+    <string name="btnedityuser">MODIFICAR USUARIOS</string>
+    <string name="btndeleteuser">ELIMINAR USUARIOS</string>
+    <string name="btnuserlist">LISTA DE USUARIOS</string>
+    <string name="btnaddproduct">AGREGAR PRODUCTOS</string>
+    <string name="btneditporduct">EDITAR PRODUCTOS</string>
+    <string name="btndeleteproduct">ELIMINAR PRODUCTOS</string>
+    <string name="btnproductlist">LISTA DE PRODUCTOS</string>
+    <string name="btnadd">AGREGAR</string>
+    <string name="btedit">EDITAR</string>
+    <string name="btdelete">ELIMINAR</string>
+    <string name="btnconsultar">CONSULTAR</string>
+    <string name="idconsulta">Ingresa tu id de consulta</string>
+    <string name="precio_del_producto">Precio del producto</string>
+    <string name="descripci_n_del_producto">Descripción del producto</string>
+    <string name="id_del_usuario">ID del usuario</string>
+    <string name="agregar_producto">Agregar Producto</string>
+    <string name="imglogo">imgLogo</string>
+    <string name="ingrese_direccion">Ingrese Direccion</string>
+    <string name="name"></string>
+
+</resources>
