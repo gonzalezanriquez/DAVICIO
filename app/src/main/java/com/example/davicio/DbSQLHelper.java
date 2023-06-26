@@ -10,6 +10,7 @@
 
     import androidx.annotation.Nullable;
 
+    import java.util.ArrayList;
     import java.util.LinkedHashMap;
     import java.util.Map;
 
@@ -184,6 +185,28 @@
             sb.append("' ");
             sb.append(")");
             return sb.toString();
+        }
+
+//METODO PARA LISTADO DE USUARIOS
+        public ArrayList<Usuarios> mostrarUsuarios(){
+            SQLiteDatabase db = getReadableDatabase();
+            ArrayList<Usuarios>listaUsuarios = new ArrayList<>();
+            Usuarios usu=null;
+            Cursor cursor = db.rawQuery("SELECT * FROM usuario" , null);
+
+            if(cursor.moveToFirst()){
+                do {
+                    usu= new Usuarios();
+                    usu.setId(cursor.getInt(0));
+                    usu.setNombre(cursor.getString(1));
+                    usu.setApellido(cursor.getString(2));
+                    usu.setMail(cursor.getString(3));
+                    usu.setContraseña(cursor.getString(4));
+                    listaUsuarios.add(usu);
+                }while (cursor.moveToNext());
+            }
+                cursor.close();
+                return listaUsuarios;
         }
 
         public Boolean usuarioRegistrado(String mail){

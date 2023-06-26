@@ -3,7 +3,7 @@ package com.example.davicio;
 import java.io.Serializable;
 
 
-public class Personas implements  Serializable{
+public class Usuarios implements  Serializable{
 
     private Integer id;
     private String nombre;
@@ -11,7 +11,7 @@ public class Personas implements  Serializable{
     private String mail;
     private String contraseña;
 
-    public Personas(Integer id, String nombre, String apellido,String mail,String contraseña ) {
+    public Usuarios(Integer id, String nombre, String apellido, String mail, String contraseña ) {
         this.setId(id);
         this.nombre = nombre;
         this.apellido = apellido;
@@ -19,7 +19,7 @@ public class Personas implements  Serializable{
         this.contraseña = contraseña;
     }
 
-    public Personas(){
+    public Usuarios(){
 
     }
 
