@@ -26,7 +26,7 @@ public class LoginActivity extends sinBarraSuperior {
     private DbSQLHelper dbSQLHelper;
     private SQLiteDatabase db;
     private ExecutorService executorService;
-    Handler handleUserExists;
+
     int idUsuario;
     String nombreUsuario,apellidoUsuario,mailUsuario,conteaseniaUsuario;
 

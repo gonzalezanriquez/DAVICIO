@@ -7,30 +7,61 @@
     tools:context=".InicioActivity">
 
 
+    <ImageButton
+        android:id="@+id/btnlistasucursales"
+        android:layout_width="244dp"
+        android:layout_height="89dp"
+        android:adjustViewBounds="true"
+        android:background="@null"
+        android:scaleType="centerInside"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titulohola"
+        app:layout_constraintVertical_bias="0.067"
+        app:srcCompat="@drawable/btnsucursales" />
+
+    <ImageButton
+        android:id="@+id/btnlistaproductos"
+        android:layout_width="244dp"
+        android:layout_height="89dp"
+        android:adjustViewBounds="true"
+        android:background="@null"
+        android:scaleType="centerInside"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnlistasucursales"
+        app:layout_constraintVertical_bias="0.051"
+        app:srcCompat="@drawable/btnproductos" />
+
     <ImageView
         android:id="@+id/logodavicio"
-        android:layout_width="194dp"
-        android:layout_height="139dp"
+        android:layout_width="230dp"
+        android:layout_height="145dp"
         android:contentDescription="@string/logodavicio"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.113"
+        app:layout_constraintVertical_bias="0.186"
         app:srcCompat="@drawable/logodavicio" />
 
     <TextView
         android:id="@+id/titulohola"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/cascadiafont"
         android:text=""
         android:textAlignment="center"
-        android:textSize="18sp"
-        android:fontFamily="@font/cascadiafont"
+        android:textColor="@color/rosa"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/logodavicio"
-        app:layout_constraintVertical_bias="0.031"
-        tools:layout_editor_absoluteX="-27dp" />
+        app:layout_constraintVertical_bias="0.069"
+        tools:layout_editor_absoluteX="0dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

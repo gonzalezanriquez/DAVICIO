@@ -59,7 +59,7 @@
     <string name="idconsulta">Ingresa tu id de consulta</string>
     <string name="precio_del_producto">Precio del producto</string>
     <string name="descripci_n_del_producto">Descripción del producto</string>
-    <string name="id_del_usuario">ID del usuario</string>
+    <string name="id_del_usuario">ID del personas</string>
     <string name="agregar_producto">Agregar Producto</string>
     <string name="imglogo">imgLogo</string>
     <string name="ingrese_direccion">Ingrese Direccion</string>

@@ -1,8 +1,6 @@
 package com.example.davicio;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 
 public class adminActivity extends sinBarraSuperior {
@@ -12,7 +10,7 @@ public class adminActivity extends sinBarraSuperior {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_crudusuarios);
+        setContentView(R.layout.activity_admin);
         /*adduser=findViewById(R.id.btnaddusuarios);
         edituser=findViewById(R.id.btnedituser);
         deleteuser=findViewById(R.id.btndeleteuser);

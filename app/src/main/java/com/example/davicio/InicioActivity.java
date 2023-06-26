@@ -9,7 +9,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 public class InicioActivity extends sinBarraSuperior {
-ImageButton sucursales;
+    ImageButton sucursales,productos;
     TextView nombre;
     @SuppressLint("MissingInflatedId")
     @Override
@@ -18,13 +18,32 @@ ImageButton sucursales;
         setContentView(R.layout.activity_inicio);
 
         nombre= findViewById(R.id.titulohola);
-        sucursales=findViewById(R.id.btnsucursales);
-
+        sucursales=findViewById(R.id.btnlistasucursales);
+        productos=findViewById(R.id.btnlistaproductos);
 
         Bundle caja= getIntent().getExtras();
         String name= caja.getString("nombre");
 
-        nombre.setText("Te damos la Bienvenida, "+ name+"! ");
+        nombre.setText("¡Hola, "+ name+"! ");
+
+        sucursales.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent= new Intent(InicioActivity.this, InicioActivity.class);
+                startActivity(intent);
+            }
+        });
+        productos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent= new Intent(InicioActivity.this, InicioActivity.class);
+                startActivity(intent);
+
+            }
+        });
+
+
+
 
 
     }
