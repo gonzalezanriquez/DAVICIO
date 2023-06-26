@@ -20,16 +20,11 @@ ImageButton sucursales;
         nombre= findViewById(R.id.titulohola);
         sucursales=findViewById(R.id.btnsucursales);
 
-sucursales.setOnClickListener(new View.OnClickListener() {
-    @Override
-    public void onClick(View view) {
-        Intent intent =new Intent(InicioActivity.this,UsuarioViewHolder.class);
-    }
-});
+
         Bundle caja= getIntent().getExtras();
         String name= caja.getString("nombre");
 
-        nombre.setText("Hola, "+ name+"!");
+        nombre.setText("Te damos la Bienvenida, "+ name+"! ");
 
 
     }

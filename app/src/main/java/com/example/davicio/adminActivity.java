@@ -22,7 +22,7 @@ public class adminActivity extends sinBarraSuperior {
         deleteproduct=findViewById(R.id.btndeleteproduct);
         listproduct=findViewById(R.id.btnproductlist);
 */
-        /*USUARIOS*/
+        /* USUARIOS
         adduser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -51,7 +51,7 @@ public class adminActivity extends sinBarraSuperior {
                 startActivity(intent);
             }
         });
-        /*PRODUCTOS*/
+
         addproduct.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -80,7 +80,7 @@ public class adminActivity extends sinBarraSuperior {
                 startActivity(intent);
             }
         });
-
+*/
 
     }
 }

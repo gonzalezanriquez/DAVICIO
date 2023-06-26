@@ -14,7 +14,7 @@
     import java.util.Map;
 
     public class DbSQLHelper extends SQLiteOpenHelper {
-        private static final String DATABASE_NAME = "leandro";
+        private static final String DATABASE_NAME = "davicio";
         private static final int DATABASE_VERSION = 1;
 
         //USUARIOS
@@ -66,7 +66,7 @@
                     + ")";
             db.execSQL(createProductosTableQuery);
 
-            String queryPrecargados1 = precargados("Admin","admin","mail","1234");
+            String queryPrecargados1 = precargados("Admin","admin","mailadmin","1234");
             String queryPrecargados2 = precargados("Usuario1","Usuario1","mail1","1234");
             String queryPrecargados3 = precargados("Usuario2","Usuario2","mail2","1234");
             db.execSQL(queryPrecargados1);

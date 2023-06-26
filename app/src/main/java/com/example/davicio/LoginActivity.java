@@ -27,8 +27,8 @@ public class LoginActivity extends sinBarraSuperior {
     private SQLiteDatabase db;
     private ExecutorService executorService;
     Handler handleUserExists;
-    String nombreUsuario;
-
+    int idUsuario;
+    String nombreUsuario,apellidoUsuario,mailUsuario,conteaseniaUsuario;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -132,8 +132,12 @@ public class LoginActivity extends sinBarraSuperior {
                 Cursor cursor = db.rawQuery("SELECT * FROM usuario WHERE mail = '" + correo + "' AND contrasenia = '" + pass + "'", null);
                 /*NOMBRE DE USUARIO*/
                 while (cursor.moveToNext()) {
-                    nombreUsuario = cursor.getString(cursor.getInt(1));
 
+                    int idUsuario = cursor.getInt(0);
+                     nombreUsuario = cursor.getString(1);
+                     apellidoUsuario = cursor.getString(2);
+                     mailUsuario = cursor.getString(3);
+                     conteaseniaUsuario = cursor.getString(4);
 
 
                 }
@@ -143,15 +147,29 @@ public class LoginActivity extends sinBarraSuperior {
                 cursor.close();
 
                 if (mailcontrasenia) {
+                    // si es admin
+                    if(mailUsuario.equalsIgnoreCase("mailadmin")){
+                        Intent registerIntent = new Intent(LoginActivity.this, adminActivity.class);
 
-                    Intent registerIntent = new Intent(LoginActivity.this, InicioActivity.class);
-                    Bundle bundle = new Bundle();
-                    bundle.putString("nombre", nombreUsuario);
-
-                    registerIntent.putExtras(bundle);
-
-
-                    startActivity(registerIntent);
+                        Bundle bundle = new Bundle();
+                        bundle.putInt("id", idUsuario);
+                        bundle.putString("nombre", nombreUsuario);
+                        bundle.putString("apellido", apellidoUsuario);
+                        bundle.putString("mail", mailUsuario);
+                        bundle.putString("conteasenia", conteaseniaUsuario);
+                        registerIntent.putExtras(bundle);
+                        startActivity(registerIntent);
+                    } else{
+                        Intent registerIntent = new Intent(LoginActivity.this, InicioActivity.class);
+                        Bundle bundle = new Bundle();
+                        bundle.putInt("id", idUsuario);
+                        bundle.putString("nombre", nombreUsuario);
+                        bundle.putString("apellido", apellidoUsuario);
+                        bundle.putString("mail", mailUsuario);
+                        bundle.putString("conteasenia", conteaseniaUsuario);
+                        registerIntent.putExtras(bundle);
+                        startActivity(registerIntent);
+                    }
                 } else {
                     Cursor correoCursor = db.rawQuery("SELECT * FROM usuario WHERE mail = '" + correo + "'", null);
                     boolean mail = correoCursor.moveToFirst();
