@@ -9,14 +9,19 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.google.android.gms.maps.CameraUpdate;
+import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 
 public class mapaActivity extends sinBarraSuperior implements OnMapReadyCallback, GoogleMap.OnMapClickListener,GoogleMap.OnMapLongClickListener {
 
     EditText ingresodireccion;
     Button buscar;
+    GoogleMap map;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,9 +40,9 @@ public class mapaActivity extends sinBarraSuperior implements OnMapReadyCallback
                 Intent mapa= new Intent(Intent.ACTION_VIEW,map);
 
                 startActivity(mapa);
-                //SupportMapFragment mapFragment= (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
+                SupportMapFragment mapFragment= (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
 
-                //mapFragment.getMapAsync(this);
+                mapFragment.getMapAsync(mapaActivity.this);
 
 
             }
@@ -46,6 +51,21 @@ public class mapaActivity extends sinBarraSuperior implements OnMapReadyCallback
     }
     @Override
     public void onMapReady(@NonNull GoogleMap googleMap) {
+        //Instancia de googlemap
+        map= googleMap;
+
+        //cargar controladores de mapas
+        this.map.setOnMapClickListener(this);
+        this.map.setOnMapLongClickListener(this);
+
+        LatLng argentina= new LatLng(-34.6045441,-58.3822102);
+
+        map.addMarker(new MarkerOptions().position(argentina).title("Ciudad de Buenos Aires"));
+        map.moveCamera(CameraUpdateFactory.newLatLng(argentina));
+
+
+
+
 
     }
     @Override
