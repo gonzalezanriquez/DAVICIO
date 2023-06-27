@@ -3,6 +3,8 @@ package com.example.davicio;
 import androidx.annotation.NonNull;
 
 import android.content.Intent;
+import android.location.Address;
+import android.location.Geocoder;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -17,68 +19,73 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import java.io.IOException;
+import java.util.List;
+
 public class mapaActivity extends sinBarraSuperior implements OnMapReadyCallback, GoogleMap.OnMapClickListener,GoogleMap.OnMapLongClickListener {
 
     EditText ingresodireccion;
     Button buscar;
     GoogleMap map;
+    Geocoder geocoder;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mapa);
 
-        ingresodireccion=findViewById(R.id.ingresodireccion);
-        buscar=findViewById(R.id.btnmapsearch);
+        ingresodireccion = findViewById(R.id.ingresodireccion);
+        buscar = findViewById(R.id.btnmapsearch);
+
+        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
+        mapFragment.getMapAsync(this);
+
+        geocoder = new Geocoder(this);
 
         buscar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String direccion= ingresodireccion.getText().toString();
-
-                Uri map= Uri.parse("geo:0,0?q="+ Uri.encode(direccion));
-
-                Intent mapa= new Intent(Intent.ACTION_VIEW,map);
-
-                startActivity(mapa);
-                SupportMapFragment mapFragment= (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
-
-                mapFragment.getMapAsync(mapaActivity.this);
-
-
+                String direccion = ingresodireccion.getText().toString();
+                if (!direccion.isEmpty()) {
+                    buscarDireccion(direccion);
+                }
             }
         });
-
     }
+
+    private void buscarDireccion(String direccion) {
+        try {
+            List<Address> addresses = geocoder.getFromLocationName(direccion, 1);
+            if (!addresses.isEmpty()) {
+                Address address = addresses.get(0);
+                double latitud = address.getLatitude();
+                double longitud = address.getLongitude();
+                LatLng ubicacion = new LatLng(latitud, longitud);
+                mostrarUbicacion(ubicacion, direccion);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void mostrarUbicacion(LatLng ubicacion, String titulo) {
+        map.clear();
+        map.addMarker(new MarkerOptions().position(ubicacion).title(titulo));
+        map.animateCamera(CameraUpdateFactory.newLatLngZoom(ubicacion, 15.0f));
+    }
+
     @Override
     public void onMapReady(@NonNull GoogleMap googleMap) {
-        //Instancia de googlemap
-        map= googleMap;
-
-        //cargar controladores de mapas
-        this.map.setOnMapClickListener(this);
-        this.map.setOnMapLongClickListener(this);
-
-        LatLng argentina= new LatLng(-34.6045441,-58.3822102);
-
-        map.addMarker(new MarkerOptions().position(argentina).title("Ciudad de Buenos Aires"));
-        map.moveCamera(CameraUpdateFactory.newLatLng(argentina));
-
-
-
-
-
+        map = googleMap;
+        map.setOnMapClickListener(this);
+        map.setOnMapLongClickListener(this);
     }
+
     @Override
     public void onMapClick(@NonNull LatLng latLng) {
-
     }
-
-
 
     @Override
     public void onMapLongClick(@NonNull LatLng latLng) {
-
     }
-
-
 }
