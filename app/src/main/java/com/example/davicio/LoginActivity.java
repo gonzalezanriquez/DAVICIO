@@ -147,7 +147,7 @@ public class LoginActivity extends sinBarraSuperior {
                 if (mailcontrasenia) {
                     // si es admin
                     if(mailUsuario.equalsIgnoreCase("mailadmin")){
-                        Intent registerIntent = new Intent(LoginActivity.this, adminActivity.class);
+                        Intent registerIntent = new Intent(LoginActivity.this, mapaActivity.class);
 
                         Bundle bundle = new Bundle();
                         bundle.putInt("id", idUsuario);
