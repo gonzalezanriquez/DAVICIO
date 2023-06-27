@@ -160,7 +160,7 @@ public class LoginActivity extends sinBarraSuperior {
                         registerIntent.putExtras(bundle);
                         startActivity(registerIntent);
                     } else{
-                        Intent registerIntent = new Intent(LoginActivity.this, InicioActivity.class);
+                        Intent registerIntent = new Intent(LoginActivity.this, advertenciaActivity.class);
                         Bundle bundle = new Bundle();
                         bundle.putInt("id", idUsuario);
                         bundle.putString("nombre", nombreUsuario);

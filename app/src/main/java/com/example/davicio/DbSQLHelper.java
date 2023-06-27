@@ -209,6 +209,29 @@
                 return listaUsuarios;
         }
 
+
+        //METODO PARA LISTADO DE PRODUCTOS
+        public ArrayList<Productos> mostrarProductos(){
+            SQLiteDatabase db = getReadableDatabase();
+            ArrayList<Productos>listaProductos = new ArrayList<>();
+            Productos prod=null;
+            Cursor cursor = db.rawQuery("SELECT * FROM producto" , null);
+
+            if(cursor.moveToFirst()){
+                do {
+                    prod= new Productos();
+                    prod.setId(cursor.getInt(0));
+                    prod.setNombre(cursor.getString(1));
+                    prod.setDescripcion(cursor.getString(2));
+                    prod.setNombre(cursor.getString(3));
+
+                    listaProductos.add(prod);
+                }while (cursor.moveToNext());
+            }
+            cursor.close();
+            return listaProductos;
+        }
+
         public Boolean usuarioRegistrado(String mail){
             SQLiteDatabase db = getReadableDatabase();
 

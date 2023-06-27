@@ -19,7 +19,7 @@ public class advertenciaActivity extends sinBarraSuperior {
         soymayor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent soymayor= new Intent(advertenciaActivity.this, adminActivity.class);
+                Intent soymayor= new Intent(advertenciaActivity.this, InicioActivity.class);
                 startActivity(soymayor);
             }
         });

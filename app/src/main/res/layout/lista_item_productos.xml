@@ -65,18 +65,18 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
                 <TextView
-                    android:id="@+id/etiquApellido"
+                    android:id="@+id/etiquDescripcion"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="left"
                     android:layout_weight="1"
                     android:fontFamily="@font/cascadiafont"
-                    android:text="Apellido:"
+                    android:text="Descripcion:"
                     android:textColor="@color/black"
                     android:textSize="18sp" />
 
                 <TextView
-                    android:id="@+id/viewApellido"
+                    android:id="@+id/viewDescripcion"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="left"
@@ -101,12 +101,12 @@
                     android:layout_gravity="left"
                     android:layout_weight="1"
                     android:fontFamily="@font/cascadiafont"
-                    android:text="Mail:"
+                    android:text="Precio:"
                     android:textColor="@color/black"
                     android:textSize="18sp" />
 
                 <TextView
-                    android:id="@+id/viewMail"
+                    android:id="@+id/viewPrecio"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="left"

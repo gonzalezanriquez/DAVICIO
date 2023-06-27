@@ -29,14 +29,14 @@ public class InicioActivity extends sinBarraSuperior {
         sucursales.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent= new Intent(InicioActivity.this, InicioActivity.class);
+                Intent intent= new Intent(InicioActivity.this, ListUserActivity.class);
                 startActivity(intent);
             }
         });
         productos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent= new Intent(InicioActivity.this, InicioActivity.class);
+                Intent intent= new Intent(InicioActivity.this, ListUserActivity.class);
                 startActivity(intent);
 
             }
