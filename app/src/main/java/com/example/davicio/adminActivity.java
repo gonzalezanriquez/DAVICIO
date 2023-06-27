@@ -1,32 +1,27 @@
 package com.example.davicio;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
+
+import com.example.davicio.crudproductos.ListProductsActivity;
+import com.example.davicio.crudusuarios.ListUserActivity;
 
 public class adminActivity extends sinBarraSuperior {
 
-    ImageButton edituser,editproduct,editsucursales, listusers,listproduct,listsucursales;
+    ImageButton edituser,listproduct;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin);
 
-
-
-
         edituser=findViewById(R.id.btncrudusuarios);
-        //editproduct=findViewById(R.id.btncrudproductos);
-       // editsucursales=findViewById(R.id.btncrudsuucursales);
-        listproduct=findViewById(R.id.btncrudsuucursales);
-        //listusers=findViewById(R.id.btncrudusuarios);
+        listproduct=findViewById(R.id.btncrudproductos);
 
-
-
-        /* USUARIOS*/
+        /* LISTAS Y USUARIOS */
         edituser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -38,42 +33,10 @@ public class adminActivity extends sinBarraSuperior {
         listproduct.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent= new Intent(adminActivity.this, ListProductsActivity.class);
-                startActivity(intent);
+                Intent prod= new Intent(adminActivity.this, ListProductsActivity.class);
+                startActivity(prod);
             }
         });
-/* listproduct.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent= new Intent(adminActivity.this, ListProductsActivity.class);
-                startActivity(intent);
-            }
-        });
-        editproduct.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent= new Intent(adminActivity.this, edtuserActivity.class);
-                startActivity(intent);
-            }
-        });
-        editsucursales.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent= new Intent(adminActivity.this, edtuserActivity.class);
-                startActivity(intent);
-            }
-        });*/
-
-
-      /*  listusers.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent= new Intent(adminActivity.this, addproductoActivity.class);
-                startActivity(intent);
-            }
-        });*/
-
-
-
     }
+
 }

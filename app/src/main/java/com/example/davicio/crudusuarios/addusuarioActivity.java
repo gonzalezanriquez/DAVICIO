@@ -1,4 +1,4 @@
-package com.example.davicio;
+package com.example.davicio.crudusuarios;
 
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -8,6 +8,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+
+import com.example.davicio.R;
+import com.example.davicio.contexto.DbSQLHelper;
+import com.example.davicio.sinBarraSuperior;
 
 import java.util.concurrent.ExecutorService;
 

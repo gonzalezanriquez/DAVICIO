@@ -1,11 +1,16 @@
-package com.example.davicio;
+package com.example.davicio.crudusuarios;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+
+import com.example.davicio.R;
+import com.example.davicio.adptadores.ListaUsuariosAdapter;
+import com.example.davicio.contexto.DbSQLHelper;
+import com.example.davicio.entidades.Usuarios;
+import com.example.davicio.sinBarraSuperior;
 
 import java.util.ArrayList;
 import java.util.concurrent.ExecutorService;

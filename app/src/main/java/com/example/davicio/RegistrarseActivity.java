@@ -9,6 +9,8 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import com.example.davicio.contexto.DbSQLHelper;
+
 
 public class RegistrarseActivity extends sinBarraSuperior {
     ImageButton registro, cancelar;

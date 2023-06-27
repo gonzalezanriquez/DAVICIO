@@ -64,5 +64,6 @@
     <string name="imglogo">imgLogo</string>
     <string name="ingrese_direccion">Ingrese Direccion</string>
     <string name="name"></string>
+    <string name="boton_volver">boton volver</string>
 
 </resources>

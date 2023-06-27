@@ -1,4 +1,4 @@
-package com.example.davicio;
+package com.example.davicio.crudproductos;
 
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -6,6 +6,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.example.davicio.R;
+import com.example.davicio.contexto.DbSQLHelper;
+import com.example.davicio.sinBarraSuperior;
+
 import java.util.Map;
 import java.util.concurrent.ExecutorService;
 

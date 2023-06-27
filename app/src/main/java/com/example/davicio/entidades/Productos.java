@@ -1,4 +1,4 @@
-package com.example.davicio;
+package com.example.davicio.entidades;
 
 import java.io.Serializable;
 
@@ -47,7 +47,7 @@ public class Productos implements Serializable {
     }
 
     public String getPrecio() {
-        return precio;
+        return "$ "+precio;
     }
 
     public void setPrecio(String precio) {

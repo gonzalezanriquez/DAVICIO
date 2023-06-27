@@ -1,4 +1,4 @@
-package com.example.davicio;
+package com.example.davicio.entidades;
 
 import java.io.Serializable;
 

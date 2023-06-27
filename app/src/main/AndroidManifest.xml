@@ -13,30 +13,31 @@
         android:theme="@style/Theme.DAVICIO"
         tools:targetApi="31" >
         <activity
-            android:name=".ListUserActivity"
+            android:name=".crudusuarios.ListUserActivity"
             android:exported="false" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyApppgJJu5wewNllFQDTErm4D5eNLoTtug" />
+        <activity
+            android:name=".crudproductos.ListProductsActivity"
+            android:exported="false" />
 
         <activity
             android:name=".mapaActivity"
+
             android:exported="false" />
         <activity
-            android:name=".editproductActivity"
+            android:name=".crudproductos.editproductActivity"
             android:exported="false" />
         <activity
-            android:name=".addproductoActivity"
+            android:name=".crudproductos.addproductoActivity"
             android:exported="false" />
         <activity
-            android:name=".edtuserActivity"
+            android:name=".crudusuarios.edtuserActivity"
             android:exported="false" />
         <activity
-            android:name=".modificarproductoActivity"
-            android:exported="false" />
-        <activity
-            android:name=".addusuarioActivity"
+            android:name=".crudusuarios.addusuarioActivity"
             android:exported="false" />
         <activity
             android:name=".adminActivity"

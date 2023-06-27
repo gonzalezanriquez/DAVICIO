@@ -18,7 +18,7 @@
             android:layout_height="match_parent"
             android:layout_weight=".1"
             android:padding="2dp"
-            android:src="@drawable/icousu"
+
             />
 
 
@@ -48,12 +48,12 @@
                     android:textColor="@color/black"
                     android:textSize="18sp" />
                 <TextView
-                    android:id="@+id/viewNombre"
+                    android:id="@+id/viewNombreProducto"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="left"
                     android:layout_weight="1"
-                    android:textColor="@color/rosa"
+                    android:textColor="@color/black"
                     android:fontFamily="@font/cascadiafont"
                     android:textSize="18sp"
                     />

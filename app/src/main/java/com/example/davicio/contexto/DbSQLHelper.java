@@ -1,14 +1,13 @@
-    package com.example.davicio;
+    package com.example.davicio.contexto;
 
     import android.content.ContentValues;
     import android.content.Context;
     import android.database.Cursor;
     import android.database.sqlite.SQLiteDatabase;
     import android.database.sqlite.SQLiteOpenHelper;
-    import android.view.View;
-    import android.widget.Toast;
 
-    import androidx.annotation.Nullable;
+    import com.example.davicio.entidades.Productos;
+    import com.example.davicio.entidades.Usuarios;
 
     import java.util.ArrayList;
     import java.util.LinkedHashMap;
@@ -223,7 +222,8 @@
                     prod.setId(cursor.getInt(0));
                     prod.setNombre(cursor.getString(1));
                     prod.setDescripcion(cursor.getString(2));
-                    prod.setNombre(cursor.getString(3));
+                    prod.setPrecio(cursor.getString(3));
+
 
                     listaProductos.add(prod);
                 }while (cursor.moveToNext());

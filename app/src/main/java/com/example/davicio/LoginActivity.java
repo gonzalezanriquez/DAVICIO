@@ -4,14 +4,14 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.os.Handler;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import com.example.davicio.contexto.DbSQLHelper;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -21,8 +21,6 @@ public class LoginActivity extends sinBarraSuperior {
     ImageButton login, register;
     EditText mail, contrasenia;
     TextView camposincompletoslogin;
-
-
     private DbSQLHelper dbSQLHelper;
     private SQLiteDatabase db;
     private ExecutorService executorService;

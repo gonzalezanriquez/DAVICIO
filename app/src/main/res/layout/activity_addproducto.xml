@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".addproductoActivity">
+    tools:context=".crudproductos.addproductoActivity">
 
 
     <LinearLayout
@@ -42,10 +42,10 @@
             android:autofillHints=""
             android:backgroundTint="@color/btnInicio"
             android:hint="@string/descripci_n_del_producto"
+            android:textColor="@color/black"
             android:inputType="textLongMessage"
             android:minHeight="48dp"
-            android:textColor="#FFFFFF"
-            android:textColorHint="#FFFFFF"
+            android:textColorHint="@color/gris"
             tools:ignore="VisualLintTextFieldSize" />
 
         <EditText

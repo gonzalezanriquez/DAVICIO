@@ -1,4 +1,4 @@
-package com.example.davicio;
+package com.example.davicio.adptadores;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -7,6 +7,9 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.davicio.R;
+import com.example.davicio.entidades.Usuarios;
 
 import java.util.ArrayList;
 
