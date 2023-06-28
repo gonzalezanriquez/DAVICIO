@@ -9,18 +9,18 @@
     >
 
     <ImageButton
-        android:id="@+id/btnlistUsu3"
+        android:id="@+id/btnlistaproductos"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginEnd="9dp"
         android:adjustViewBounds="true"
         android:background="@null"
         android:scaleType="centerInside"
-        app:layout_constraintBottom_toTopOf="@+id/btnlistUsu4"
+        app:layout_constraintBottom_toTopOf="@+id/btnlistasucursales"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btnlistUsu"
         app:layout_constraintTop_toBottomOf="@+id/btncrudsuucursales"
-        app:srcCompat="@drawable/btnsucursalesedit" />
+        app:srcCompat="@drawable/listasproductos" />
 
     <ImageButton
         android:id="@+id/btnlistUsu"
@@ -30,14 +30,14 @@
         android:adjustViewBounds="true"
         android:background="@null"
         android:scaleType="centerInside"
-        app:layout_constraintBottom_toBottomOf="@+id/btnlistUsu3"
-        app:layout_constraintEnd_toStartOf="@+id/btnlistUsu3"
+        app:layout_constraintBottom_toBottomOf="@+id/btnlistaproductos"
+        app:layout_constraintEnd_toStartOf="@+id/btnlistaproductos"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/btnlistUsu3"
-        app:srcCompat="@drawable/btnsucursalesedit" />
+        app:layout_constraintTop_toTopOf="@+id/btnlistaproductos"
+        app:srcCompat="@drawable/listasusuarios" />
 
     <ImageButton
-        android:id="@+id/btnlistUsu4"
+        android:id="@+id/btnlistasucursales"
         android:layout_width="193dp"
         android:layout_height="0dp"
         android:layout_marginBottom="68dp"
@@ -47,27 +47,29 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnlistUsu3"
-        app:srcCompat="@drawable/btnsucursalesedit" />
+        app:layout_constraintTop_toBottomOf="@+id/btnlistaproductos"
+        app:srcCompat="@drawable/listassucursales" />
 
     <ImageView
         android:id="@+id/logoDavicio"
-        android:layout_width="409dp"
-        android:layout_height="111dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="1dp"
         android:layout_marginTop="39dp"
-        app:layout_constraintBottom_toTopOf="@+id/crudusuarios"
+        android:layout_marginEnd="1dp"
+        app:layout_constraintBottom_toTopOf="@+id/titulonombre"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logodavicio" />
 
     <TextView
-        android:id="@+id/crudusuarios"
+        android:id="@+id/titulonombre"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         android:fontFamily="@font/cascadiafont"
-        android:text="¡Hola, Leandro!"
+        android:text=""
         android:textAlignment="center"
         android:textColor="@color/rosa"
         android:textSize="20sp"
@@ -87,7 +89,7 @@
         app:layout_constraintBottom_toTopOf="@+id/btncrudproductos"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/crudusuarios"
+        app:layout_constraintTop_toBottomOf="@+id/titulonombre"
         app:srcCompat="@drawable/btnusu" />
 
     <ImageButton
@@ -112,7 +114,7 @@
         android:adjustViewBounds="true"
         android:background="@null"
         android:scaleType="centerInside"
-        app:layout_constraintBottom_toTopOf="@+id/btnlistUsu3"
+        app:layout_constraintBottom_toTopOf="@+id/btnlistaproductos"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btncrudproductos"

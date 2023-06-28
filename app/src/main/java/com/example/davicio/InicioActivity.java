@@ -8,11 +8,14 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import com.example.davicio.crudproductos.ListProductsActivity;
+import com.example.davicio.crudusuarios.ListSucursalesActivity;
 import com.example.davicio.crudusuarios.ListUserActivity;
 
 public class InicioActivity extends sinBarraSuperior {
     ImageButton sucursales,productos;
     TextView nombre;
+    String nombreUsu;
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,21 +27,30 @@ public class InicioActivity extends sinBarraSuperior {
         productos=findViewById(R.id.btnlistaproductos);
 
         Bundle caja= getIntent().getExtras();
-        String name= caja.getString("nombre");
+        nombreUsu= caja.getString("nombre");
 
-        nombre.setText("¡Hola, "+ name+"! ");
+        nombre.setText("¡Hola, "+ nombreUsu+"! ");
 
         sucursales.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent= new Intent(InicioActivity.this, ListUserActivity.class);
+                Intent intent= new Intent(InicioActivity.this, ListSucursalesActivity.class);
+
+                Bundle bundle = new Bundle();
+                bundle.putString("nombre", nombreUsu);
+                intent.putExtras(bundle);
                 startActivity(intent);
+
+
             }
         });
         productos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent= new Intent(InicioActivity.this, ListUserActivity.class);
+                Intent intent= new Intent(InicioActivity.this, ListProductsActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putString("nombre", nombreUsu);
+                intent.putExtras(bundle);
                 startActivity(intent);
 
             }

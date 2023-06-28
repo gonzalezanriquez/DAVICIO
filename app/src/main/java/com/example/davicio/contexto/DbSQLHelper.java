@@ -7,6 +7,7 @@
     import android.database.sqlite.SQLiteOpenHelper;
 
     import com.example.davicio.entidades.Productos;
+    import com.example.davicio.entidades.Sucursales;
     import com.example.davicio.entidades.Usuarios;
 
     import java.util.ArrayList;
@@ -35,6 +36,12 @@
         private static final String COLUMN_PRODUCTO_PRECIO = "precio";
         private static final String COLUMN_PRODUCTO_USUARIO_ID = "usuario_id";
 
+        // SUCURSALES
+        private static final String TABLE_SUCURSAL = "sucursales";
+        private static final String COLUMN_SUCURSAL_ID = "id";
+        private static final String COLUMN_SUCURSAL_NOMBRE = "nombre";
+        private static final String COLUMN_SUCURSAL_DIRECCION = "direccion";
+        private static final String COLUMN_SUCURSAL_TELEFONO = "telefono";
 
 
 
@@ -66,6 +73,16 @@
                     + ")";
             db.execSQL(createProductosTableQuery);
 
+            String createSucursalTableQuery = "CREATE TABLE " + TABLE_SUCURSAL + "("
+                    + COLUMN_SUCURSAL_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+                    + COLUMN_SUCURSAL_NOMBRE + " TEXT,"
+                    + COLUMN_SUCURSAL_DIRECCION + " TEXT,"
+                    + COLUMN_SUCURSAL_TELEFONO + " TEXT"
+                    + ")";
+            db.execSQL(createSucursalTableQuery);
+
+
+
             String queryPrecargados1 = precargados("Admin","admin","mailadmin","1234");
             String queryPrecargados2 = precargados("Usuario1","Usuario1","mail1","1234");
             String queryPrecargados3 = precargados("Usuario2","Usuario2","mail2","1234");
@@ -78,6 +95,8 @@
             db.execSQL(queryProdPrecargados1);
             db.execSQL(queryProdPrecargados2);
             db.execSQL(queryProdPrecargados3);
+            String querySucPrecargados1=precargadossucursales("DAVINCI","Formosa 293, CABA","1136877515");
+            db.execSQL(querySucPrecargados1);
         }
 
         @Override
@@ -159,6 +178,34 @@
             return sb.toString();
     }
 
+
+        public String precargadossucursales(String nombre, String direccion, String telefono) {
+            StringBuilder sb = new StringBuilder();
+            sb.append("INSERT OR IGNORE INTO sucursales");
+            sb.append("(");
+            sb.append("nombre");
+            sb.append(" , ");
+            sb.append("direccion");
+            sb.append(" , ");
+            sb.append("telefono");
+            sb.append(")");
+            sb.append(" VALUES ");
+            sb.append("( ");
+            sb.append(" '");
+            sb.append(nombre);
+            sb.append("' ");
+            sb.append(" , ");
+            sb.append(" '");
+            sb.append(direccion);
+            sb.append("' ");
+            sb.append(" , ");
+            sb.append(" '");
+            sb.append(telefono);
+            sb.append("' ");
+            sb.append(")");
+            return sb.toString();
+        }
+
         public String productosprecargados(String nombre, String descripcion, String precio) {
             StringBuilder sb = new StringBuilder();
             sb.append("INSERT OR IGNORE INTO producto");
@@ -231,6 +278,27 @@
             cursor.close();
             return listaProductos;
         }
+
+        public ArrayList<Sucursales> mostrarSucursales() {
+            SQLiteDatabase db = getReadableDatabase();
+            ArrayList<Sucursales> listaSucursales = new ArrayList<>();
+            Cursor cursor = db.rawQuery("SELECT * FROM sucursales",null);
+
+            if (cursor.moveToFirst()) {
+                do {
+                    Sucursales sucursal = new Sucursales();
+                    sucursal.setIdsucursales(cursor.getInt(0));
+                    sucursal.setNombre(cursor.getString(1));
+                    sucursal.setDireccion(cursor.getString(2));
+                    sucursal.setTelefono(cursor.getString(3));
+                    listaSucursales.add(sucursal);
+                } while (cursor.moveToNext());
+            }
+            cursor.close();
+            return listaSucursales;
+        }
+
+
 
         public Boolean usuarioRegistrado(String mail){
             SQLiteDatabase db = getReadableDatabase();

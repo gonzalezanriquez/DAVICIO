@@ -22,12 +22,13 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import java.io.IOException;
 import java.util.List;
 
-public class mapaActivity extends sinBarraSuperior implements OnMapReadyCallback, GoogleMap.OnMapClickListener,GoogleMap.OnMapLongClickListener {
+public class mapaActivity extends sinBarraSuperior implements OnMapReadyCallback, GoogleMap.OnMapClickListener, GoogleMap.OnMapLongClickListener {
 
     EditText ingresodireccion;
     Button buscar;
     GoogleMap map;
     Geocoder geocoder;
+    String direccion, titulo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,13 +43,26 @@ public class mapaActivity extends sinBarraSuperior implements OnMapReadyCallback
 
         geocoder = new Geocoder(this);
 
+        // Obtener los datos del Bundle
+        Bundle bundle = getIntent().getExtras();
+        if (bundle != null) {
+            titulo = bundle.getString("nombre");
+            direccion = bundle.getString("direccion");
+
+            if (direccion != null && !direccion.isEmpty()) {
+                ingresodireccion.setText(direccion);
+                buscarDireccion(direccion);
+            }
+        }
+
         buscar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String direccion = ingresodireccion.getText().toString();
-                if (!direccion.isEmpty()) {
-                    buscarDireccion(direccion);
-                }
+
+                Uri map = Uri.parse("geo:0,0?q="+ Uri.encode(direccion));
+                Intent intent=new Intent(Intent.ACTION_VIEW,map);
+                startActivity(intent);
             }
         });
     }
@@ -61,7 +75,7 @@ public class mapaActivity extends sinBarraSuperior implements OnMapReadyCallback
                 double latitud = address.getLatitude();
                 double longitud = address.getLongitude();
                 LatLng ubicacion = new LatLng(latitud, longitud);
-                mostrarUbicacion(ubicacion, direccion);
+                mostrarUbicacion(ubicacion, titulo);
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -69,16 +83,22 @@ public class mapaActivity extends sinBarraSuperior implements OnMapReadyCallback
     }
 
     private void mostrarUbicacion(LatLng ubicacion, String titulo) {
-        map.clear();
-        map.addMarker(new MarkerOptions().position(ubicacion).title(titulo));
-        map.animateCamera(CameraUpdateFactory.newLatLngZoom(ubicacion, 15.0f));
+        if (map != null) {
+            map.clear();
+            map.addMarker(new MarkerOptions().position(ubicacion).title(titulo));
+            map.animateCamera(CameraUpdateFactory.newLatLngZoom(ubicacion, 15.0f));
+        }
     }
+
 
     @Override
     public void onMapReady(@NonNull GoogleMap googleMap) {
         map = googleMap;
         map.setOnMapClickListener(this);
         map.setOnMapLongClickListener(this);
+        if (direccion != null && !direccion.isEmpty()) {
+            buscarDireccion(direccion);
+        }
     }
 
     @Override

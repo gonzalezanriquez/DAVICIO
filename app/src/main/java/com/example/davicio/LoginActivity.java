@@ -12,6 +12,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.example.davicio.contexto.DbSQLHelper;
+import com.example.davicio.crudusuarios.ListSucursalesActivity;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -147,24 +148,16 @@ public class LoginActivity extends sinBarraSuperior {
                 if (mailcontrasenia) {
                     // si es admin
                     if(mailUsuario.equalsIgnoreCase("mailadmin")){
-                        Intent registerIntent = new Intent(LoginActivity.this, mapaActivity.class);
+                        Intent registerIntent = new Intent(LoginActivity.this, adminActivity.class);
 
                         Bundle bundle = new Bundle();
-                        bundle.putInt("id", idUsuario);
                         bundle.putString("nombre", nombreUsuario);
-                        bundle.putString("apellido", apellidoUsuario);
-                        bundle.putString("mail", mailUsuario);
-                        bundle.putString("conteasenia", conteaseniaUsuario);
                         registerIntent.putExtras(bundle);
                         startActivity(registerIntent);
                     } else{
                         Intent registerIntent = new Intent(LoginActivity.this, advertenciaActivity.class);
                         Bundle bundle = new Bundle();
-                        bundle.putInt("id", idUsuario);
                         bundle.putString("nombre", nombreUsuario);
-                        bundle.putString("apellido", apellidoUsuario);
-                        bundle.putString("mail", mailUsuario);
-                        bundle.putString("conteasenia", conteaseniaUsuario);
                         registerIntent.putExtras(bundle);
                         startActivity(registerIntent);
                     }

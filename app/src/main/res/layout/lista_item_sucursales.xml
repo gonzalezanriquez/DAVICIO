@@ -18,9 +18,7 @@
             android:layout_height="match_parent"
             android:layout_weight=".1"
             android:padding="2dp"
-            android:src="@drawable/icousuario"
-
-            />
+            android:src="@drawable/icosucursales"/>
 
 
         <LinearLayout
@@ -49,7 +47,7 @@
                     android:textColor="@color/black"
                     android:textSize="18sp" />
                 <TextView
-                    android:id="@+id/viewNombre"
+                    android:id="@+id/viewNombreSucursal"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="left"
@@ -66,18 +64,18 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
                 <TextView
-                    android:id="@+id/etiquApellido"
+                    android:id="@+id/etiquetaDireccion"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="left"
                     android:layout_weight="1"
                     android:fontFamily="@font/cascadiafont"
-                    android:text="Apellido:"
+                    android:text="Direccion:"
                     android:textColor="@color/black"
                     android:textSize="18sp" />
 
                 <TextView
-                    android:id="@+id/viewApellido"
+                    android:id="@+id/viewDireccion"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="left"
@@ -96,18 +94,18 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/etiquetaMail"
+                    android:id="@+id/etiquetaTelefono"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="left"
                     android:layout_weight="1"
                     android:fontFamily="@font/cascadiafont"
-                    android:text="Mail:"
+                    android:text="Telefono:"
                     android:textColor="@color/black"
                     android:textSize="18sp" />
 
                 <TextView
-                    android:id="@+id/viewMail"
+                    android:id="@+id/viewTelefono"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="left"
@@ -127,5 +125,15 @@
 
 
         </LinearLayout>
+
+        <ImageView
+            android:id="@+id/imageViewRight"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_weight=".1"
+            android:padding="2dp"
+            android:src="@drawable/btnir"
+            android:scaleType="centerInside"
+            />
     </LinearLayout>
 </RelativeLayout>
