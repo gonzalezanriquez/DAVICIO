@@ -29,7 +29,8 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.178" />
+        app:layout_constraintVertical_bias="0.122"
+        tools:ignore="TextContrastCheck" />
 
     <Button
         android:id="@+id/btnmapsearch"
@@ -37,17 +38,17 @@
         android:layout_height="wrap_content"
         android:backgroundTint="#FF9800"
         android:fallbackLineSpacing="false"
-        android:text="VER EN GOOGLEMAPS"
+        android:text="@string/ver_en_googlemaps"
         android:textColor="#000000"
         app:cornerRadius="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ingresodireccion"
-        app:layout_constraintVertical_bias="0.061" />
+        app:layout_constraintVertical_bias="0.036" />
 
-    <fragment
+    <androidx.fragment.app.FragmentContainerView
         android:id="@+id/map"
         android:name="com.google.android.gms.maps.SupportMapFragment"
         android:layout_width="match_parent"
@@ -58,5 +59,6 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnmapsearch"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.121" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

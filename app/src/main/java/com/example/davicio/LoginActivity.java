@@ -12,7 +12,6 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.example.davicio.contexto.DbSQLHelper;
-import com.example.davicio.crudusuarios.ListSucursalesActivity;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -40,6 +39,8 @@ public class LoginActivity extends sinBarraSuperior {
         contrasenia = findViewById(R.id.contrasenialogin);
         camposincompletoslogin = findViewById(R.id.camposincompletoslogin);
         dbSQLHelper = new DbSQLHelper(this);
+
+
 
         //HILO SECUNDARIO PARA LA CARGA DE LA BASE DE DATOS
         executorService = Executors.newFixedThreadPool(1);
@@ -149,15 +150,16 @@ public class LoginActivity extends sinBarraSuperior {
                     // si es admin
                     if(mailUsuario.equalsIgnoreCase("mailadmin")){
                         Intent registerIntent = new Intent(LoginActivity.this, adminActivity.class);
-
                         Bundle bundle = new Bundle();
                         bundle.putString("nombre", nombreUsuario);
+                        bundle.putString("mail", mailUsuario);
                         registerIntent.putExtras(bundle);
                         startActivity(registerIntent);
                     } else{
                         Intent registerIntent = new Intent(LoginActivity.this, advertenciaActivity.class);
                         Bundle bundle = new Bundle();
                         bundle.putString("nombre", nombreUsuario);
+                        bundle.putString("mail", mailUsuario);
                         registerIntent.putExtras(bundle);
                         startActivity(registerIntent);
                     }

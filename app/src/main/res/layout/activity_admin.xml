@@ -9,115 +9,162 @@
     >
 
     <ImageButton
-        android:id="@+id/btnlistaproductos"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginEnd="9dp"
-        android:adjustViewBounds="true"
-        android:background="@null"
-        android:scaleType="centerInside"
-        app:layout_constraintBottom_toTopOf="@+id/btnlistasucursales"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btnlistUsu"
-        app:layout_constraintTop_toBottomOf="@+id/btncrudsuucursales"
-        app:srcCompat="@drawable/listasproductos" />
-
-    <ImageButton
-        android:id="@+id/btnlistUsu"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="16dp"
-        android:adjustViewBounds="true"
-        android:background="@null"
-        android:scaleType="centerInside"
-        app:layout_constraintBottom_toBottomOf="@+id/btnlistaproductos"
-        app:layout_constraintEnd_toStartOf="@+id/btnlistaproductos"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/btnlistaproductos"
-        app:srcCompat="@drawable/listasusuarios" />
-
-    <ImageButton
-        android:id="@+id/btnlistasucursales"
-        android:layout_width="193dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="68dp"
+        android:id="@+id/btnaddprod"
+        android:layout_width="wrap_content"
+        android:layout_height="70dp"
+        android:layout_marginTop="32dp"
         android:adjustViewBounds="true"
         android:background="@null"
         android:scaleType="centerInside"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnlistaproductos"
+        app:layout_constraintTop_toBottomOf="@+id/btncrudsuucursales"
+        app:layout_constraintVertical_bias="0.068"
+        app:srcCompat="@drawable/addprod" />
+
+    <ImageButton
+        android:id="@+id/btnaddsucu"
+        android:layout_width="wrap_content"
+        android:layout_height="70dp"
+        android:adjustViewBounds="true"
+        android:background="@null"
+        android:scaleType="centerInside"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.471"
+        app:layout_constraintStart_toEndOf="@+id/btnaddprod"
+        app:layout_constraintTop_toBottomOf="@+id/btncrudsuucursales"
+        app:layout_constraintVertical_bias="0.16"
+        app:srcCompat="@drawable/addsucursales" />
+
+    <ImageButton
+        android:id="@+id/btnaddusu"
+        android:layout_width="wrap_content"
+        android:layout_height="70dp"
+        android:adjustViewBounds="true"
+        android:background="@null"
+        android:scaleType="centerInside"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnaddprod"
+        app:layout_constraintHorizontal_bias="0.433"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btncrudsuucursales"
+        app:layout_constraintVertical_bias="0.16"
+        app:srcCompat="@drawable/addusu" />
+
+    <ImageButton
+        android:id="@+id/btnlistaproductos"
+        android:layout_width="191dp"
+        android:layout_height="77dp"
+        android:layout_marginTop="32dp"
+        android:adjustViewBounds="true"
+        android:background="@null"
+        android:scaleType="centerInside"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/btnlistUsu"
+        app:layout_constraintTop_toBottomOf="@+id/btnaddprod"
+        app:layout_constraintVertical_bias="0.176"
+        app:srcCompat="@drawable/listasproductos" />
+
+    <ImageButton
+        android:id="@+id/btnlistUsu"
+        android:layout_width="197dp"
+        android:layout_height="77dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:adjustViewBounds="true"
+        android:background="@null"
+        android:scaleType="centerInside"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnaddprod"
+        app:layout_constraintVertical_bias="0.176"
+        app:srcCompat="@drawable/listasusuarios" />
+
+    <ImageButton
+        android:id="@+id/btnlistasucursales"
+        android:layout_width="193dp"
+        android:layout_height="82dp"
+        android:adjustViewBounds="true"
+        android:background="@null"
+        android:scaleType="centerInside"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titulonombre"
+        app:layout_constraintVertical_bias="0.869"
         app:srcCompat="@drawable/listassucursales" />
 
     <ImageView
         android:id="@+id/logoDavicio"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="39dp"
-        android:layout_marginEnd="1dp"
+        android:layout_width="282dp"
+        android:layout_height="91dp"
         app:layout_constraintBottom_toTopOf="@+id/titulonombre"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.666"
         app:srcCompat="@drawable/logodavicio" />
 
     <TextView
         android:id="@+id/titulonombre"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="572dp"
         android:fontFamily="@font/cascadiafont"
         android:text=""
         android:textAlignment="center"
         android:textColor="@color/rosa"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/btncrudusuarios"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/logoDavicio" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="0dp" />
 
     <ImageButton
-        android:id="@+id/btncrudusuarios"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="12dp"
+        android:id="@+id/btncrudproductos"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_marginTop="28dp"
         android:adjustViewBounds="true"
         android:background="@null"
         android:scaleType="centerInside"
-        app:layout_constraintBottom_toTopOf="@+id/btncrudproductos"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.058"
+        app:layout_constraintStart_toEndOf="@+id/btncrudusuarios"
+        app:layout_constraintTop_toBottomOf="@+id/titulonombre"
+        app:srcCompat="@drawable/btnprud" />
+
+    <ImageButton
+        android:id="@+id/btncrudusuarios"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="28dp"
+        android:adjustViewBounds="true"
+        android:background="@null"
+        android:scaleType="centerInside"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/titulonombre"
         app:srcCompat="@drawable/btnusu" />
 
     <ImageButton
-        android:id="@+id/btncrudproductos"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="11dp"
-        android:adjustViewBounds="true"
-        android:background="@null"
-        android:scaleType="centerInside"
-        app:layout_constraintBottom_toTopOf="@+id/btncrudsuucursales"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btncrudusuarios"
-        app:srcCompat="@drawable/btnprud" />
-
-    <ImageButton
         android:id="@+id/btncrudsuucursales"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="58dp"
+        android:layout_width="188dp"
+        android:layout_height="62dp"
+        android:layout_marginTop="100dp"
         android:adjustViewBounds="true"
         android:background="@null"
         android:scaleType="centerInside"
-        app:layout_constraintBottom_toTopOf="@+id/btnlistaproductos"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.506"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btncrudproductos"
+        app:layout_constraintTop_toBottomOf="@+id/titulonombre"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/btnsucursalesedit" />
 
 

@@ -32,26 +32,28 @@ private ExecutorService executorService;
 private ArrayList<Productos> listaArrayProductos;
 public  RecyclerView listproductos;
 ImageButton btnvolver;
-String nombreUsu;
+String mail;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.lista_productos);
-        btnvolver=findViewById(R.id.btnvolver);
+
+
         listproductos= findViewById(R.id.listadeProductos);
         listproductos.setLayoutManager(new LinearLayoutManager(ListProductsActivity.this));
-
+        btnvolver=findViewById(R.id.btnvolver);
         dbSQLHelper = new DbSQLHelper(ListProductsActivity.this);
         listaArrayProductos= new ArrayList<>();
 
-        //HILO SECUNDARIO PARA LA CARGA DE LA BASE DE DATOS
+        Bundle caja= getIntent().getExtras();
+        mail=caja.getString("mail");
+
         executorService = Executors.newFixedThreadPool(1);
         executorService.execute(new Runnable() {
             @Override
             public void run() {
                 db = dbSQLHelper.getReadableDatabase();
-
                 ListaProductosAdapter adapter = new ListaProductosAdapter(dbSQLHelper.mostrarProductos());
                 listproductos.setAdapter(adapter);
             }
@@ -60,14 +62,19 @@ String nombreUsu;
         btnvolver.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(ListProductsActivity.this, InicioActivity.class);
-                Bundle caja= getIntent().getExtras();
-                nombreUsu= caja.getString("nombre");
-                Bundle bundle = new Bundle();
-                bundle.putString("nombre", nombreUsu);
-                intent.putExtras(bundle);
-                startActivity(intent);
+                if(mail.equals("mailadmin")){
+                Intent intent=new Intent(ListProductsActivity.this, adminActivity.class);
+                    Bundle caja= getIntent().getExtras();
+                    intent.putExtras(caja);
+                    startActivity(intent);
+                }else{
+                    Intent intent=new Intent(ListProductsActivity.this, InicioActivity.class);
+                    Bundle caja= getIntent().getExtras();
+                    intent.putExtras(caja);
+                    startActivity(intent);
+                }
             }
+
         });
     }
 }

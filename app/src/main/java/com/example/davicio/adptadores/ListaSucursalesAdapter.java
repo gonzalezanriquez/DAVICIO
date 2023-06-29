@@ -24,6 +24,7 @@ public class ListaSucursalesAdapter extends RecyclerView.Adapter<ListaSucursales
         this.listasdesucursales = listasdesucursales;
     }
 
+
     @NonNull
     @Override
     public SucursalestoViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -41,12 +42,10 @@ public class ListaSucursalesAdapter extends RecyclerView.Adapter<ListaSucursales
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // Crear el Bundle y agregar los datos
                 Bundle bundle = new Bundle();
                 bundle.putString("nombre", sucursales.getNombre());
                 bundle.putString("direccion", sucursales.getDireccion());
 
-                // Iniciar la actividad Mapa y pasar el Bundle
                 Intent intent = new Intent(view.getContext(), mapaActivity.class);
                 intent.putExtras(bundle);
                 view.getContext().startActivity(intent);

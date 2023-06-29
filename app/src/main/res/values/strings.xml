@@ -65,5 +65,6 @@
     <string name="ingrese_direccion">Ingrese Direccion</string>
     <string name="name"></string>
     <string name="boton_volver">boton volver</string>
+    <string name="ver_en_googlemaps">VER EN GOOGLEMAPS</string>
 
 </resources>

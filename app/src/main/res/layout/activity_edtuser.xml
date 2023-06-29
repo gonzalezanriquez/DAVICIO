@@ -8,24 +8,25 @@
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="22dp"
-        android:layout_marginEnd="22dp"
+        android:layout_width="354dp"
+        android:layout_height="459dp"
+        android:layout_marginTop="178dp"
+        android:layout_marginBottom="128dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/camposincompletos">
+        app:layout_constraintEnd_toStartOf="@+id/camposincompletos"
+        app:layout_constraintStart_toStartOf="@+id/camposincompletos"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/itulo"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="15dp"
             android:fontFamily="@font/cascadiafont"
             android:text="@string/btnedityuser"
-            android:textColor="@color/btnInicio"
+            android:textAlignment="center"
+            android:textColor="@color/rosa"
             android:textSize="20sp" />
 
         <EditText
@@ -33,64 +34,68 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:autofillHints=""
-            android:backgroundTint="@color/btnInicio"
+            android:backgroundTint="@color/rosa"
+            android:fontFamily="@font/cascadiafont"
             android:hint="@string/idconsulta"
             android:inputType="textLongMessage"
             android:minHeight="48dp"
-            android:textColor="#FFFFFF"
-            android:textColorHint="#FFFFFF"
-            tools:ignore="VisualLintTextFieldSize" />
+            android:textColor="@color/gris"
+            android:textColorHint="@color/rosa" />
 
         <EditText
             android:id="@+id/editTextNombre"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:autofillHints=""
-            android:backgroundTint="@color/btnInicio"
+            android:backgroundTint="@color/rosa"
+            android:fontFamily="@font/cascadiafont"
             android:hint="@string/nombreregistro"
             android:inputType="textLongMessage"
             android:minHeight="48dp"
-            android:textColor="#FFFFFF"
-            android:textColorHint="#FFFFFF"
+            android:textColor="@color/gris"
+            android:textColorHint="@color/rosa"
             tools:ignore="VisualLintTextFieldSize" />
 
         <EditText
             android:id="@+id/editTextApellido"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/btnInicio"
+            android:backgroundTint="@color/rosa"
+            android:fontFamily="@font/cascadiafont"
             android:hint="@string/apellidoregistro"
             android:importantForAutofill="no"
             android:inputType="textLongMessage"
             android:minHeight="48dp"
-            android:textColor="#FFFFFF"
-            android:textColorHint="#FFFFFF"
+            android:textColor="@color/gris"
+            android:textColorHint="@color/rosa"
             tools:ignore="VisualLintTextFieldSize" />
 
         <EditText
             android:id="@+id/editTextMail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/btnInicio"
+            android:backgroundTint="@color/rosa"
+            android:fontFamily="@font/cascadiafont"
             android:hint="@string/mailregistro"
             android:importantForAutofill="no"
             android:inputType="textLongMessage"
             android:minHeight="48dp"
-            android:textColor="#FFFFFF"
-            android:textColorHint="#FFFFFF"
+            android:textColor="@color/gris"
+            android:textColorHint="@color/rosa"
             tools:ignore="VisualLintTextFieldSize" />
 
         <EditText
             android:id="@+id/editTextContrasenia"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/btnInicio"
+            android:backgroundTint="@color/rosa"
+            android:fontFamily="@font/cascadiafont"
             android:hint="@string/contraseniaregistro"
             android:importantForAutofill="no"
             android:inputType="textPassword"
             android:minHeight="48dp"
-            android:textColor="#FFFFFF"
-            android:textColorHint="#FFFFFF"
+            android:textColor="@color/gris"
+            android:textColorHint="@color/rosa"
             tools:ignore="VisualLintTextFieldSize" />
 
         <Button
@@ -99,7 +104,7 @@
             android:layout_height="48dp"
             android:layout_marginTop="15dp"
 
-            android:backgroundTint="@color/btnInicio"
+            android:backgroundTint="@color/rosa"
             android:text="@string/btedit"
             android:textColor="@color/black"
             android:textColorHighlight="#03A9F4"
@@ -112,7 +117,7 @@
             android:id="@+id/btnconsultar"
             android:layout_width="match_parent"
             android:layout_height="48dp"
-            android:backgroundTint="@color/white"
+            android:backgroundTint="@color/btnInicio"
             android:text="@string/btnconsultar"
             android:textColor="@color/black"
             android:textColorHighlight="#03A9F4"
@@ -132,7 +137,7 @@
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:layout_marginBottom="140dp"
-            android:backgroundTint="#7A7A7A"
+            android:backgroundTint="#EF4343"
             android:text="ELIMINAR"
             android:textColor="@color/black"
             android:textColorHighlight="#03A9F4"
@@ -143,12 +148,26 @@
 
     </LinearLayout>
 
+    <ImageButton
+        android:id="@+id/btnvolver"
+        android:layout_width="409dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="49dp"
+        android:adjustViewBounds="true"
+        android:background="@null"
+        android:scaleType="centerInside"
+        android:src="@drawable/btnvolver"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="316dp"
-        android:layout_height="127dp"
-        android:layout_marginTop="48dp"
-        android:layout_marginBottom="18dp"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="49dp"
+        android:layout_marginBottom="19dp"
         app:layout_constraintBottom_toTopOf="@+id/camposincompletos"
         app:layout_constraintEnd_toStartOf="@+id/camposincompletos"
         app:layout_constraintStart_toStartOf="@+id/camposincompletos"
@@ -160,11 +179,11 @@
         android:id="@+id/camposincompletos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="7dp"
+        android:layout_marginBottom="465dp"
         android:fontFamily="@font/cascadiafont"
         android:text=""
         android:textColor="@color/btnInicio"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintBottom_toTopOf="@+id/btnvolver"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />

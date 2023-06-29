@@ -1,25 +1,28 @@
 package com.example.davicio.crudusuarios;
 
-import android.database.Cursor;
+import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
-
 import com.example.davicio.R;
+import com.example.davicio.adminActivity;
+import com.example.davicio.adptadores.ListaSucursalesAdapter;
 import com.example.davicio.contexto.DbSQLHelper;
 import com.example.davicio.sinBarraSuperior;
 
 import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class addusuarioActivity extends sinBarraSuperior {
     private DbSQLHelper dbSQLHelper;
     private SQLiteDatabase db;
-
-    Button add, cancelar;
+    ImageButton btnvolver;
+    Button añadir;
     EditText nombre, apellido, mail, contrasenia;
     TextView camposincompletos;
     ExecutorService executorService;
@@ -27,66 +30,62 @@ public class addusuarioActivity extends sinBarraSuperior {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_modificarusuario);
+        setContentView(R.layout.activity_addusuario);
 
-        add=findViewById(R.id.buttonadduser);
+        btnvolver = findViewById(R.id.btnvolver);
+        añadir = findViewById(R.id.buttonadduser);
         nombre = findViewById(R.id.editTextNombre);
         apellido = findViewById(R.id.editTextApellido);
         mail = findViewById(R.id.editTextMail);
         contrasenia = findViewById(R.id.editTextContrasenia);
         camposincompletos = findViewById(R.id.camposincompletos);
+
         dbSQLHelper = new DbSQLHelper(this);
-        db = dbSQLHelper.getWritableDatabase();
 
-        add.setOnClickListener(new View.OnClickListener() {
+        executorService = Executors.newFixedThreadPool(1);
+        executorService.execute(new Runnable() {
             @Override
-            public void onClick(View view) {
+            public void run() {
+                db = dbSQLHelper.getWritableDatabase();
+                añadir.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        String nombreText = nombre.getText().toString();
+                        String apellidoText = apellido.getText().toString();
+                        String mailText = mail.getText().toString();
+                        String contraseniaText = contrasenia.getText().toString();
 
-                if (!nombre.equals("") || !apellido.equals("")|| !mail.equals("")|| !contrasenia.equals("")){
-                    if( dbSQLHelper.insertUsuario(nombre.getText().toString(),apellido.getText().toString(),mail.getText().toString(),contrasenia.getText().toString())){
-
-
-                        nombre.setText("");
-                        apellido.setText("");
-                        mail.setText("");
-                        contrasenia.setText("");
-                        camposincompletos.setText("Usuario Registrado con éxito");
-                    }else{
-                        camposincompletos.setText(R.string.yaregistrado);
+                        if (nombreText.isEmpty() || apellidoText.isEmpty() || mailText.isEmpty() || contraseniaText.isEmpty()) {
+                            camposincompletos.setText(R.string.camposincompletos);
+                        } else {
+                            if (dbSQLHelper.insertUsuario(nombreText, apellidoText, mailText, contraseniaText)) {
+                                nombre.setText("");
+                                apellido.setText("");
+                                mail.setText("");
+                                contrasenia.setText("");
+                                camposincompletos.setText("Usuario Registrado con éxito");
+                            } else {
+                                camposincompletos.setText(R.string.yaregistrado);
+                            }
+                        }
                     }
-
-
-                }
-                else{
-                    camposincompletos.setText(R.string.camposincompletos);
-                }
+                });
             }
         });
 
 
 
-
-
-
-
+        btnvolver.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(addusuarioActivity.this, adminActivity.class);
+                Bundle caja= getIntent().getExtras();
+                intent.putExtras(caja);
+                startActivity(intent);
+            }
+        });
     }
 
-
-
-
-
-
-    public void editar (int id){
-
-        Cursor cursor = db.rawQuery("SELECT * FROM usuario WHERE id = '" + id + "' " , null);
-
-        if(cursor.moveToFirst()){
-
-        }else{
-
-        }
-
-    }
     @Override
     protected void onDestroy() {
         super.onDestroy();
@@ -95,7 +94,4 @@ public class addusuarioActivity extends sinBarraSuperior {
         }
         executorService.shutdown();
     }
-
-
-
 }

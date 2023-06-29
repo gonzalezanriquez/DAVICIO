@@ -9,8 +9,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.example.davicio.crudproductos.ListProductsActivity;
-import com.example.davicio.crudusuarios.ListSucursalesActivity;
-import com.example.davicio.crudusuarios.ListUserActivity;
+import com.example.davicio.sucursales.ListSucursalesActivity;
 
 public class InicioActivity extends sinBarraSuperior {
     ImageButton sucursales,productos;
@@ -28,7 +27,6 @@ public class InicioActivity extends sinBarraSuperior {
 
         Bundle caja= getIntent().getExtras();
         nombreUsu= caja.getString("nombre");
-
         nombre.setText("¡Hola, "+ nombreUsu+"! ");
 
         sucursales.setOnClickListener(new View.OnClickListener() {

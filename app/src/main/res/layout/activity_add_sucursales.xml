@@ -20,14 +20,14 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3">
+        app:layout_constraintTop_toBottomOf="@+id/logoDavicio">
 
         <EditText
-            android:id="@+id/editTextNombre"
+            android:id="@+id/nombresucursal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:autofillHints=""
-            android:hint="Ingresar nombre de Producto"
+            android:hint="Ingresar nombre de Sucursal"
             android:inputType="textLongMessage"
             android:minHeight="48dp"
             android:backgroundTint="@color/rosa"
@@ -37,12 +37,11 @@
             tools:ignore="HardcodedText,VisualLintTextFieldSize" />
 
         <EditText
-            android:id="@+id/editTextDescripcion"
+            android:id="@+id/direccion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:autofillHints=""
-
-            android:hint="@string/descripci_n_del_producto"
+            android:hint="Ingrese direccion"
             android:backgroundTint="@color/rosa"
             android:textColor="@color/gris"
             android:textColorHint="@color/rosa"
@@ -57,7 +56,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:autofillHints=""
-            android:hint="@string/precio_del_producto"
+            android:hint="Ingrese Telefono"
             android:inputType="numberDecimal"
             android:minHeight="48dp"
             android:backgroundTint="@color/rosa"
@@ -68,12 +67,12 @@
 
 
         <Button
-            android:id="@+id/agregarProductoButton"
+            android:id="@+id/btnagregarSucursal"
             android:layout_width="match_parent"
             android:layout_marginTop="20dp"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/rosa"
-            android:text="@string/btnaddproduct"
+            android:text="AGREGAR SUCURSALES"
             android:textColor="@color/black" />
 
     </LinearLayout>
@@ -92,7 +91,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/logoDavicio"
         android:layout_width="166dp"
         android:layout_height="0dp"
         android:layout_marginTop="45dp"

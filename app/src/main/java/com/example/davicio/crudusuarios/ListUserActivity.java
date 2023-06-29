@@ -28,19 +28,20 @@ private ExecutorService executorService;
 private ArrayList<Usuarios> listaArrayUsuarios;
 public  RecyclerView listuser;
 ImageButton btnvolver;
+    String nombreUsu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.lista_usuarios);
-        btnvolver=findViewById(R.id.btnvolver);
+
         listuser= findViewById(R.id.listaUsuarios);
         listuser.setLayoutManager(new LinearLayoutManager(ListUserActivity.this));
-
+        btnvolver=findViewById(R.id.btnvolver);
         dbSQLHelper = new DbSQLHelper(ListUserActivity.this);
         listaArrayUsuarios= new ArrayList<>();
 
-        //HILO SECUNDARIO PARA LA CARGA DE LA BASE DE DATOS
+
         executorService = Executors.newFixedThreadPool(1);
         executorService.execute(new Runnable() {
             @Override
@@ -54,6 +55,8 @@ ImageButton btnvolver;
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(ListUserActivity.this, adminActivity.class);
+                Bundle caja= getIntent().getExtras();
+                intent.putExtras(caja);
                 startActivity(intent);
             }
         });

@@ -23,11 +23,11 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView3">
 
         <EditText
-            android:id="@+id/editIdProducto"
+            android:id="@+id/editIdSucursal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:autofillHints=""
-            android:hint="Ingresar id de Producto"
+            android:hint="Ingresar id de Sucursal"
             android:inputType="number"
             android:minHeight="48dp"
             android:fontFamily="@font/cascadiafont"
@@ -39,11 +39,11 @@
         />
 
         <EditText
-            android:id="@+id/editTextNombreproducto"
+            android:id="@+id/editNombreSucursal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:autofillHints=""
-            android:hint="Ingresar nombre Producto"
+            android:hint="Ingresar nombre Sucursal"
             android:inputType="textLongMessage"
             android:minHeight="48dp"
             android:fontFamily="@font/cascadiafont"
@@ -53,11 +53,11 @@
             tools:ignore="HardcodedText,VisualLintTextFieldSize" />
 
         <EditText
-            android:id="@+id/editTextDescripcionproducto"
+            android:id="@+id/direccion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:autofillHints=""
-            android:hint="@string/descripci_n_del_producto"
+            android:hint="Ingrese direccion"
             android:inputType="textLongMessage"
             android:minHeight="48dp"
             android:fontFamily="@font/cascadiafont"
@@ -67,11 +67,11 @@
             tools:ignore="VisualLintTextFieldSize" />
 
         <EditText
-            android:id="@+id/editTextPrecioproducto"
+            android:id="@+id/telefono"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:autofillHints=""
-            android:hint="@string/precio_del_producto"
+            android:hint="Ingrese Telefono"
             android:inputType="numberDecimal"
             android:minHeight="48dp"
             android:fontFamily="@font/cascadiafont"
@@ -98,7 +98,7 @@
         app:srcCompat="@drawable/logodavicio" />
 
     <Button
-        android:id="@+id/btnconsultarProducto"
+        android:id="@+id/btnconsultarSucursal"
         android:layout_width="204dp"
         android:layout_height="47dp"
         android:layout_marginBottom="216dp"
@@ -111,33 +111,33 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/btneliminarproducto"
+        android:id="@+id/btneliminarSucursal"
         android:layout_width="204dp"
         android:layout_height="47dp"
         android:backgroundTint="#D14A40"
-        android:text="@string/btndeleteproduct"
+        android:text="ELIMINAR SUCURSAL"
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnEditarProducto"
+        app:layout_constraintTop_toBottomOf="@+id/btnEditarSucursal"
         app:layout_constraintVertical_bias="0.0" />
 
     <Button
-        android:id="@+id/btnEditarProducto"
+        android:id="@+id/btnEditarSucursal"
         android:layout_width="204dp"
         android:layout_height="47dp"
         android:layout_marginBottom="124dp"
         android:backgroundTint="@color/btnInicio"
-        android:text="@string/btneditporduct"
+        android:text="EDITAR SUCURSAL"
         android:textColor="@color/black"
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnconsultarProducto"
+        app:layout_constraintTop_toBottomOf="@+id/btnconsultarSucursal"
         app:layout_constraintVertical_bias="0.0" />
 
     <ImageButton
@@ -153,6 +153,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-      />
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

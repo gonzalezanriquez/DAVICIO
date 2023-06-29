@@ -10,7 +10,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 
+import com.example.davicio.adptadores.ListaProductosAdapter;
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -21,6 +23,8 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class mapaActivity extends sinBarraSuperior implements OnMapReadyCallback, GoogleMap.OnMapClickListener, GoogleMap.OnMapLongClickListener {
 
@@ -29,6 +33,9 @@ public class mapaActivity extends sinBarraSuperior implements OnMapReadyCallback
     GoogleMap map;
     Geocoder geocoder;
     String direccion, titulo;
+    private ExecutorService executorService;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +44,7 @@ public class mapaActivity extends sinBarraSuperior implements OnMapReadyCallback
 
         ingresodireccion = findViewById(R.id.ingresodireccion);
         buscar = findViewById(R.id.btnmapsearch);
+
 
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
@@ -108,4 +116,8 @@ public class mapaActivity extends sinBarraSuperior implements OnMapReadyCallback
     @Override
     public void onMapLongClick(@NonNull LatLng latLng) {
     }
+
+
+
+
 }

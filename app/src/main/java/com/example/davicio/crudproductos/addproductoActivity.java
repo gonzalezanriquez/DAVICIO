@@ -1,15 +1,19 @@
 package com.example.davicio.crudproductos;
 
+import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.davicio.R;
+import com.example.davicio.adminActivity;
 import com.example.davicio.contexto.DbSQLHelper;
+import com.example.davicio.crudusuarios.addusuarioActivity;
 import com.example.davicio.sinBarraSuperior;
 
 import java.util.concurrent.ExecutorService;
@@ -19,11 +23,11 @@ public class addproductoActivity extends sinBarraSuperior {
 
     Button agregar;
     EditText nombre, descripcion,precio;
-    TextView camposincompletos;
+    ImageButton btnvolver;
     private DbSQLHelper dbSQLHelper;
     private SQLiteDatabase db;
+    ExecutorService executorService;
 
-    private ExecutorService executorService;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,46 +37,50 @@ public class addproductoActivity extends sinBarraSuperior {
         nombre=findViewById(R.id.editTextNombre);
         descripcion=findViewById(R.id.editTextDescripcion);
         precio=findViewById(R.id.editTextPrecio);
+        btnvolver = findViewById(R.id.btnvolver);
 
         dbSQLHelper = new DbSQLHelper(this);
 
-        ExecutorService executorService = Executors.newFixedThreadPool(1);
+
+        executorService = Executors.newFixedThreadPool(1);
         executorService.execute(new Runnable() {
             @Override
             public void run() {
                 db = dbSQLHelper.getWritableDatabase();
+                agregar.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        String nombreText = nombre.getText().toString();
+                        String descripcionText = descripcion.getText().toString();
+                        String precioText = precio.getText().toString();
+
+
+                        if (nombreText.isEmpty() || descripcionText.isEmpty() || precioText.isEmpty()) {
+                            Toast.makeText(addproductoActivity.this, "DEBE COMPLETAR TODOS LOS CAMPOS", Toast.LENGTH_SHORT).show();
+                        } else {
+                            if (dbSQLHelper.insertProductos(nombreText, descripcionText, precioText)) {
+                                nombre.setText("");
+                                descripcion.setText("");
+                                precio.setText("");
+                                Toast.makeText(addproductoActivity.this, "PRODUCTO REGISTRADO CON ÉXITO", Toast.LENGTH_SHORT).show();
+                            } else {
+                                Toast.makeText(addproductoActivity.this, "PRODUCTO YA REGISTRADO", Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                    }
+                });
             }
         });
 
-
-
-        agregar.setOnClickListener(new View.OnClickListener() {
+        btnvolver.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                if (!nombre.equals("") || !descripcion.equals("")|| !precio.equals("")){
-                    if(dbSQLHelper.insertProductos(nombre.getText().toString(),descripcion.getText().toString(),precio.getText().toString()))
-                    {
-                        nombre.setText("");
-                        descripcion.setText("");
-                        precio.setText("");
-                        Toast.makeText(addproductoActivity.this, "Producto Registrado con éxito", Toast.LENGTH_SHORT).show();
-
-                    }else{
-                        Toast.makeText(addproductoActivity.this, "El producto ya se encuentra registrado", Toast.LENGTH_SHORT).show();
-                    }
-
-
-                }
-                else{
-                    Toast.makeText(addproductoActivity.this, "Completar todos los campos", Toast.LENGTH_SHORT).show();
-                }
+                Intent intent = new Intent(addproductoActivity.this, adminActivity.class);
+                Bundle caja= getIntent().getExtras();
+                intent.putExtras(caja);
+                startActivity(intent);
             }
-
-
         });
-
-
 
     }
     @Override
