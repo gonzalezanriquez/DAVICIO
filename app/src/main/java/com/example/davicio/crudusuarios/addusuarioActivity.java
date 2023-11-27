@@ -47,6 +47,7 @@ public class addusuarioActivity extends sinBarraSuperior {
             @Override
             public void run() {
                 db = dbSQLHelper.getWritableDatabase();
+
                 añadir.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
